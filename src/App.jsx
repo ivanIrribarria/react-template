@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Menu from "./components/Menu";
+import Menu from "./components/MyAppBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import {

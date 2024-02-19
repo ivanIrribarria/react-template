@@ -12,8 +12,7 @@ export default function LanguageSelect(props) {
   const { i18n, t } = useTranslation();
 
   const onChangeLang = (e) => {
-    const lang_code = e.target.value;
-    i18n.changeLanguage(lang_code);
+    i18n.changeLanguage(e.target.value);
   };
 
   return (
