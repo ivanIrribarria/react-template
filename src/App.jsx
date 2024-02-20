@@ -3,27 +3,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from "./components/MyAppBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import {
-  CssBaseline,
-  ThemeProvider,
-  useMediaQuery,
-  createTheme,
-} from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, useMediaQuery } from "@mui/material";
 import SimpleContainer from "./components/SimpleContainer";
+import { themes } from "./themes/theme-context";
 
 export default function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode: prefersDarkMode ? "dark" : "light",
-        },
-      }),
+    () => (prefersDarkMode ? themes["dark"] : themes["light"]),
     [prefersDarkMode]
   );
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
